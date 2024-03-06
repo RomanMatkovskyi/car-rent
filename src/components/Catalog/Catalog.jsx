@@ -1,27 +1,42 @@
 import FAKEDATA from "./adsCars.json";
 import { CatalogList, CarItemWrapper, CarImg } from "./Catalog.styled";
+import { addFavorite } from "../../redux/slice";
+import CatalogItem from "./CatalogItem/CatalogItem";
 
 const Catalog = () => {
-  const test = "456 Example Avenue, Lviv, Ukraine";
-  let dataTest = test.split(",");
-  console.log("Test", dataTest);
   return (
     <>
       <CatalogList>
-        {FAKEDATA.map(({ id, img, year, make, model, rentalPrice }) => {
-          return (
-            <CarItemWrapper key={id}>
-              <CarImg src={img} alt="car example" width={274} height={280} />
-              <div>
-                <h2>
-                  {make} <span>{model ? model : ""}</span>
-                </h2>
-                <p>{year}</p>
-                <p>{rentalPrice}</p>
-              </div>
-            </CarItemWrapper>
-          );
-        })}
+        {FAKEDATA.map(
+          ({
+            id,
+            img,
+            year,
+            address,
+            make,
+            type,
+            model,
+            functionalities,
+            rentalPrice,
+            rentalCompany,
+          }) => {
+            return (
+              <CatalogItem
+                key={id}
+                id={id}
+                img={img}
+                year={year}
+                address={address}
+                make={make}
+                model={model}
+                functionalities={functionalities}
+                rentalPrice={rentalPrice}
+                rentalCompany={rentalCompany}
+                type={type}
+              />
+            );
+          }
+        )}
       </CatalogList>
     </>
   );

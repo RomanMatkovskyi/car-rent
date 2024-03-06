@@ -5,7 +5,6 @@ import Catalog from "../../components/Catalog/Catalog";
 const FirstPage = () => {
   return (
     <Container className="container">
-      <Title>Catalog Page</Title>
       <Catalog />
       <StyledImage src={example} alt="Example" />
     </Container>

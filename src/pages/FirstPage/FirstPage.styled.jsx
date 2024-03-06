@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  background-color: lightcoral;
+  background-color: #fff;
 `;
 
 export const Title = styled.h1`
